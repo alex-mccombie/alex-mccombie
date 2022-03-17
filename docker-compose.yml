@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  app:
+    image: alpine:3.14
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret668
+      MYSQL_DB: weather
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - weather-mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: secret668
+      MYSQL_DATABASE: weather
+
+volumes:
+  weather-mysql-data:

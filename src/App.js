@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NodeFetchData from './NodeFetchData';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h3>Weather App</h3>
+        London
+        <NodeFetchData lat="51.5129903" long="-0.1185895" />
+
+        NewYork
+        <NodeFetchData lat="40.7195341" long="-74.2226926" />;
+
+        </header>
     </div>
   );
 }
